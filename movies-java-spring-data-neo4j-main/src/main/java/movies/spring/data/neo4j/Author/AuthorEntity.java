@@ -1,17 +1,31 @@
 package movies.spring.data.neo4j.Author;
 
+
 import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
+import org.springframework.data.neo4j.core.schema.Property;
 
 @Node("Author")
 public class AuthorEntity {
     @Id
     private String AuthorId;
+
+    @Property("authorName")
     private String authorName;
+
+    @Property("pc")
     private Integer pc;
+
+    @Property("cn")
     private Integer cn;
+
+    @Property("hi")
     private Integer hi;
+
+    @Property("pi")
     private String pi;
+
+    @Property("upi")
     private String upi;
 
     public String getAuthorId() {
@@ -69,4 +83,9 @@ public class AuthorEntity {
     public void setUpi(String upi) {
         this.upi = upi;
     }
+//    @Relationship(type = "COOPERATE_WITH", direction = OUTGOING)
+//    private cooperateWithRelationship cooperateWithStartRelationships;
+//
+//    @Relationship(type = "COOPERATE_WITH", direction = INCOMING)
+//    private cooperateWithRelationship cooperateWithEndRelationships;
 }

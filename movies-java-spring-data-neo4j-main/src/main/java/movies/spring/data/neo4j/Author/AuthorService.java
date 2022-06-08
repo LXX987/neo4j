@@ -1,20 +1,14 @@
 package movies.spring.data.neo4j.Author;
 
-import movies.spring.data.neo4j.movies.MovieResultDto;
+
 import org.neo4j.driver.Driver;
-import org.neo4j.driver.Session;
-import org.neo4j.driver.SessionConfig;
-import org.neo4j.driver.Value;
-import org.neo4j.driver.types.TypeSystem;
+
 import org.springframework.data.neo4j.core.DatabaseSelectionProvider;
 import org.springframework.data.neo4j.core.Neo4jClient;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+
 import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 public class AuthorService {
@@ -33,8 +27,10 @@ public class AuthorService {
         this.databaseSelectionProvider = databaseSelectionProvider;
     }
 
-    public List<AuthorEntity> findByAuthorName(String AuthorId) {
-        return this.authorRepository.findByAuthorName(AuthorId);
+    public List<AuthorEntity> findByAuthorId(String AuthorId) {
+        return this.authorRepository.findByAuthorId(AuthorId);
     }
+
+
 
 }
