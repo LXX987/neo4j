@@ -14,4 +14,7 @@ interface AuthorRepository extends Repository<AuthorEntity, String> {
     @Query("MATCH (n:Author{AuthorId:$AuthorId}) RETURN n")
     List<AuthorEntity> findByAuthorId(@Param("AuthorId") String AuthorId);
 
+    @Query("MATCH (n:Author{authorName:$authorName})-[r]->(b) RETURN n,r,b")
+    List<Object> getAllRelation(@Param("authorName") String authorName);
+
 }

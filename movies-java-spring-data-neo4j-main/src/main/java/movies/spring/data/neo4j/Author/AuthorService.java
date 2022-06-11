@@ -31,6 +31,9 @@ public class AuthorService {
         return this.authorRepository.findByAuthorId(AuthorId);
     }
 
+    public List<Object> getAllRelation(String authorName) {
+        return this.authorRepository.getAllRelation(authorName);
+    }
 
 
 }
