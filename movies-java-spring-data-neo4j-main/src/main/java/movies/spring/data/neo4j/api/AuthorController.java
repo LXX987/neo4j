@@ -22,4 +22,9 @@ public class AuthorController {
     List<AuthorEntity> getAuthorByAuthorName(@RequestParam("AuthorId") String AuthorId) {
         return authorService.findByAuthorId(AuthorId);
     }
+
+    @GetMapping("/getAllRelation")
+    List<Object> getAllRelation(@RequestParam("authorName") String authorName) {
+        return authorService.getAllRelation(authorName);
+    }
 }
