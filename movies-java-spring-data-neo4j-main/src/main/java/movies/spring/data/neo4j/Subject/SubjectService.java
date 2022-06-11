@@ -25,4 +25,8 @@ public class SubjectService {
         this.driver = driver;
         this.databaseSelectionProvider = databaseSelectionProvider;
     }
+
+    public List<SubjectEntity> findResearchInterest(String researchInterest) {
+        return this.subjectRepository.findResearchInterest(researchInterest);
+    }
 }

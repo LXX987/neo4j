@@ -4,11 +4,11 @@ import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
 import org.springframework.data.neo4j.core.schema.Property;
 
-@Node("Author")
+@Node("Paper")
 public class PaperEntity {
 
     @Id
-    private Integer PaperId;
+    private String PaperId;
 
     @Property("year")
     private Integer year;
@@ -23,11 +23,11 @@ public class PaperEntity {
     @Property("title")
     private String title;
 
-    public Integer getPaperId() {
+    public String getPaperId() {
         return PaperId;
     }
 
-    public void setPaperId(Integer paperId) {
+    public void setPaperId(String paperId) {
         PaperId = paperId;
     }
 

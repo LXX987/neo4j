@@ -35,5 +35,7 @@ public class AuthorService {
         return this.authorRepository.getAllRelation(authorName);
     }
 
-
+    public List<AuthorEntity> findKeyAuthor(String researchInterest) {
+        return this.authorRepository.findKeyAuthor(researchInterest);
+    }
 }

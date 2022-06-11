@@ -17,4 +17,6 @@ interface AuthorRepository extends Repository<AuthorEntity, String> {
     @Query("MATCH (n:Author{authorName:$authorName})-[r]->(b) RETURN n,r,b")
     List<Object> getAllRelation(@Param("authorName") String authorName);
 
+    @Query("MATCH p=(na:Author)-[r:RESEARCH_IN]->(nb:Subject) WHERE nb.researchInterest=$researchInterest RETURN na ORDER BY na.hi DESC LIMIT 5")
+    List<AuthorEntity> findKeyAuthor(@Param("researchInterest") String researchInterest);
 }
