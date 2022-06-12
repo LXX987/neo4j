@@ -7,6 +7,7 @@ import org.springframework.data.neo4j.core.Neo4jClient;
 import org.springframework.stereotype.Service;
 
 
+import java.util.HashMap;
 import java.util.List;
 
 @Service
@@ -28,5 +29,9 @@ public class PublicationVenueService {
 
     public List<PublicationVenueEntity> findKeyVenue(String researchInterest) {
         return this.publicationVenueRepository.findKeyVenue(researchInterest);
+    }
+
+    public List<PublicationVenueEntity> findKeyVenueTime(String researchInterest, int time) {
+        return this.publicationVenueRepository.findKeyVenueTime(researchInterest,time);
     }
 }
