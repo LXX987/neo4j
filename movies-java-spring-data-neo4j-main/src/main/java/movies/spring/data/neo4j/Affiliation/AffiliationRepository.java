@@ -10,4 +10,10 @@ import java.util.List;
 
 
 public interface AffiliationRepository extends Repository<AffiliationEntity, String> {
+
+    @Query("MATCH p=(na:Author)-[r:RESEARCH_IN]->(nb:Subject) WHERE nb.researchInterest=$researchInterest WITH id(na) as naid " +
+            "MATCH (nc:Author)-[rb:BELONG_TO]->(nd:Affiliation) WHERE id(nc)=naid WITH nd,SUM(nc.hi) as sum_hi " +
+            "RETURN nd,sum_hi ORDER BY sum_hi DESC LIMIT 10")
+    List<AffiliationEntity> findKeyAffiliation(@Param("researchInterest") String researchInterest);
+
 }

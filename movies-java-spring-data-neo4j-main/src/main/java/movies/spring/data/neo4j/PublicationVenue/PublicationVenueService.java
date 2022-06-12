@@ -25,4 +25,8 @@ public class PublicationVenueService {
         this.driver = driver;
         this.databaseSelectionProvider = databaseSelectionProvider;
     }
+
+    public List<PublicationVenueEntity> findKeyVenue(String researchInterest) {
+        return this.publicationVenueRepository.findKeyVenue(researchInterest);
+    }
 }

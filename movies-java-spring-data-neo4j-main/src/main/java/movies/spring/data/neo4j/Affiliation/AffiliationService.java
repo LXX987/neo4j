@@ -24,4 +24,8 @@ public class AffiliationService {
         this.driver = driver;
         this.databaseSelectionProvider = databaseSelectionProvider;
     }
+
+    public List<AffiliationEntity> findKeyAffiliation(String researchInterest) {
+        return this.affiliationRepository.findKeyAffiliation(researchInterest);
+    }
 }

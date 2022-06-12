@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface SubjectRepository extends Repository<SubjectEntity, String> {
 
-    @Query("MATCH (n:Subject) WHERE n.researchInterest =~ ('.*'+$researchInterest+'.*') RETURN n LIMIT 20")
+    @Query("MATCH (n:Subject) WHERE n.researchInterest =~ ('.*'+$researchInterest+'.*') RETURN n LIMIT 100")
     List<SubjectEntity> findResearchInterest(@Param("researchInterest") String researchInterest);
 }

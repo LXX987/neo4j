@@ -9,4 +9,6 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface PaperRepository extends Repository<PaperEntity, String> {
+
+
 }
